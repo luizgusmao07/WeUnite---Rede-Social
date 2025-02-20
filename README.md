@@ -1,3 +1,3 @@
 # WeUnite---Rede-Social
 
-Alteranção
+Alteração
