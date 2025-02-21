@@ -1,3 +1,1 @@
-# WeUnite---Rede-Social
-
-Alteração de arquivo
+Projeto de Rede Social para atletas.
