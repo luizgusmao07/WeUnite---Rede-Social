@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Spinner, useColorMode } from '@chakra-ui/react';
-import '../index.css';
+import '../../index.css';
 import { useEffect, useState } from 'react';
-import SuggestedOportunity from './SuggestedOportunity';
+import SuggestedOportunity from '../SuggestedOportunity';
 
 const SideBar = () => {
     // Hook para acessar o modo de cor (claro ou escuro)

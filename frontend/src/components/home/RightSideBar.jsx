@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Spinner, useColorMode } from "@chakra-ui/react";
-import useShowToast from "../hooks/useShowToast";
+import useShowToast from "../../hooks/useShowToast";
 import { useEffect, useState } from "react";
-import SuggestedUser from "./SuggestedUser";
+import SuggestedUser from "../SuggestedUser";
 
 // Componente de barra lateral direita
 const RightSideBar = () => {

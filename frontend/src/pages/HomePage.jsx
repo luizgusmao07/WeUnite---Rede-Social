@@ -1,8 +1,8 @@
 import { Flex } from "@chakra-ui/react"; // Importa o componente Flex do Chakra UI para layout flexível
 import Header from "../components/Header"; // Importa o componente Header
-import SideBar from "../components/SideBar"; // Importa o componente SideBar
-import Home from "../components/Home"; // Importa o componente Home
-import RightSideBar from "../components/RightSideBar"; // Importa o componente RightSideBar
+import SideBar from "../components/home/SideBar"; // Importa o componente SideBar
+import Home from "../components/home/Home"; // Importa o componente Home
+import RightSideBar from "../components/home/RightSideBar"; // Importa o componente RightSideBar
 
 const HomePage = () => {
     return (
