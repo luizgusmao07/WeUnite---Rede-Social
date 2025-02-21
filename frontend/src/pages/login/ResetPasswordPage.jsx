@@ -1,9 +1,9 @@
 import { Button, Flex, FormControl, Heading, Input, Text,useColorMode } from "@chakra-ui/react"
-import { useAuthStore } from "../store/authStore";
+import { useAuthStore } from "../../store/authStore";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useShowToast from "../hooks/useShowToast";
-import { PasswordStrengthMeter } from "../components/PasswordStrengthMeter";
+import useShowToast from "../../hooks/useShowToast";
+import { PasswordStrengthMeter } from "../../components/login/PasswordStrengthMeter";
 
 const ResetPasswordPage = () => {
     const inputStyles = {

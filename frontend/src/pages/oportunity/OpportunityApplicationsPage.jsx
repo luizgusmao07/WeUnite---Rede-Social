@@ -14,10 +14,10 @@ import {
     Tag
 } from "@chakra-ui/react";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
-import useShowToast from "../hooks/useShowToast";
+import Header from "../../components/Header";
+import useShowToast from "../../hooks/useShowToast";
 import { useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
+import userAtom from "../../atoms/userAtom";
 
 const OpportunityApplicationsPage = () => {
     const [opportunity, setOpportunity] = useState(null);

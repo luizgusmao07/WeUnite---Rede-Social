@@ -1,6 +1,6 @@
 import { Button, Flex, FormControl, FormLabel, Heading, Input, RequiredIndicator, Text, useColorMode} from "@chakra-ui/react"
 import { useState } from "react";
-import useShowToast from "../hooks/useShowToast";
+import useShowToast from "../../hooks/useShowToast";
 import { useNavigate } from "react-router-dom";
 
 const ForgotPasswordPage = () => {

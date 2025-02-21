@@ -19,12 +19,12 @@ import {
     useDisclosure,
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import usePreviewImg from "../hooks/usePreviewImg";
+import usePreviewImg from "../../hooks/usePreviewImg";
 import { BsFillImageFill } from "react-icons/bs";
 import { useRecoilState, useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
-import useShowToast from "../hooks/useShowToast";
-import oportunitiesAtom from "../atoms/oportunitiesAtom";
+import userAtom from "../../atoms/userAtom";
+import useShowToast from "../../hooks/useShowToast";
+import oportunitiesAtom from "../../atoms/oportunitiesAtom";
 import { useParams } from "react-router-dom";
 
 

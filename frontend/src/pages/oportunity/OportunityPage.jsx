@@ -1,13 +1,13 @@
 import { Box, Button, Flex, HStack, Image, Spinner, Text, useColorModeValue, VStack, useColorMode } from '@chakra-ui/react';
-import Oportunities from '../components/Oportunities';
+import Oportunities from '../../components/oportunities/Oportunities';
 import { useEffect, useState } from 'react';
-import useShowToast from '../hooks/useShowToast';
+import useShowToast from '../../hooks/useShowToast';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import oportunitiesAtom from "../atoms/postsAtom";
+import oportunitiesAtom from "../../atoms/postsAtom";
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import CreateOportunity from '../components/CreateOportunity';
-import userAtom from '../atoms/userAtom';
+import Header from '../../components/Header';
+import CreateOportunity from '../../components/oportunities/CreateOportunity';
+import userAtom from '../../atoms/userAtom';
 
 const OportunityPage = () => {
   const showToast = useShowToast();

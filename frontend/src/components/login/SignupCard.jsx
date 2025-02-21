@@ -23,12 +23,12 @@ import {
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useSetRecoilState } from 'recoil';
 import { Check, X } from "lucide-react";
-import userAtom from '../atoms/userAtom';
-import useShowToast from '../hooks/useShowToast';
+import userAtom from '../../atoms/userAtom';
+import useShowToast from '../../hooks/useShowToast';
 
 // Importe seus átomos e hooks aqui
-import authScreenAtom from '../atoms/authAtom';
-import TermsCheckbox from './TermsCheckBox';
+import authScreenAtom from '../../atoms/authAtom';
+import TermsCheckbox from '../TermsCheckBox';
 
 
 const PasswordCriteria = ({ password }) => {

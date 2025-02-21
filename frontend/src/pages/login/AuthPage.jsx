@@ -1,8 +1,8 @@
 import { useRecoilValue } from 'recoil'; // Importa o hook useRecoilValue do Recoil para acessar o estado global
-import Login from '../components/Login'; // Importa o componente de Login
-import SignUpCard from '../components/SignupCard'; // Importa o componente de cadastro
-import authScreenAtom from '../atoms/authAtom'; // Importa o átomo que armazena o estado da tela de autenticação
-import CompanySignUpCard from '../components/CompanySignUpCard';
+import Login from '../../components/login/Login'; // Importa o componente de Login
+import SignUpCard from '../../components/login/SignupCard'; // Importa o componente de cadastro
+import authScreenAtom from '../../atoms/authAtom'; // Importa o átomo que armazena o estado da tela de autenticação
+import CompanySignUpCard from '../../components/login/CompanySignUpCard';
 
 const AuthPage = () => {
     // Obtém o estado atual da tela de autenticação do átomo global

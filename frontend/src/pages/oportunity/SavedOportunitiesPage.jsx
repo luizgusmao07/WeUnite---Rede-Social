@@ -1,10 +1,10 @@
 import { Box, Flex, Spinner, Text, useColorModeValue } from '@chakra-ui/react';
-import Oportunities from '../components/Oportunities';
+import Oportunities from '../../components/oportunities/Oportunities';
 import { useEffect, useState } from 'react';
-import useShowToast from '../hooks/useShowToast';
+import useShowToast from '../../hooks/useShowToast';
 import { useRecoilValue } from 'recoil';
-import userAtom from '../atoms/userAtom';
-import Header from "../components/Header";
+import userAtom from '../../atoms/userAtom';
+import Header from "../../components/Header";
 
 const SavedOportunitiesPage = () => {
   const showToast = useShowToast();

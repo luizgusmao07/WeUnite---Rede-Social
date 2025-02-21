@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Box, Button, Divider, Flex, HStack, Image, Text, useColorModeValue,useColorMode } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import useShowToast from "../hooks/useShowToast";
+import useShowToast from "../../hooks/useShowToast";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
+import userAtom from "../../atoms/userAtom";
 
 const Oportunities = ({ oportunity, postedBy }) => {
     const [user, setUser] = useState(null);
