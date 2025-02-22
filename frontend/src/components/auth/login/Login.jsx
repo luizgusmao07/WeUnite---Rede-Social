@@ -19,9 +19,9 @@ import {
 import { useEffect, useState } from 'react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { useSetRecoilState } from 'recoil'
-import authScreenAtom from '../../atoms/authAtom'
-import userAtom from '../../atoms/userAtom'
-import useShowToast from '../../hooks/useShowToast'
+import authScreenAtom from '../../../atoms/authAtom'
+import userAtom from '../../../atoms/userAtom'
+import useShowToast from '../../../hooks/useShowToast'
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google'
 

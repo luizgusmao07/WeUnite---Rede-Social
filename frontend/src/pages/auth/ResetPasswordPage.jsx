@@ -3,7 +3,7 @@ import { useAuthStore } from "../../store/authStore";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useShowToast from "../../hooks/useShowToast";
-import { PasswordStrengthMeter } from "../../components/login/PasswordStrengthMeter";
+import { PasswordStrengthMeter } from "../../components/auth/PasswordStrengthMeter";
 
 const ResetPasswordPage = () => {
     const inputStyles = {

@@ -1,10 +1,11 @@
 import { Button, Flex, FormControl, Heading, Input, Spinner, Text, useColorMode } from "@chakra-ui/react"
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, Navigate} from "react-router-dom";
 import useShowToast from "../../hooks/useShowToast";
 import { useAuthStore } from "../../store/authStore";
 import { useSetRecoilState } from "recoil";
 import userAtom from "../../atoms/userAtom";
+import AuthPage from "./AuthPage";
 
 
 const VerifyEmailPage = () => {
@@ -119,6 +120,14 @@ const VerifyEmailPage = () => {
                 </Flex>
 
                 <Button type="submit" variant={"outline"} disabled={isLoading || code.some((digit) => !digit)} mt={5}>	{isLoading ? <Spinner size="sm" color="#03C03C" /> : "Cadastrar"}</Button>
+
+                <Button onClick={() => {
+                    navigate("../") }} size={"sm"}> 
+                
+                Voltar
+
+                </Button>
+
             </Flex>
         </Flex>
     )
