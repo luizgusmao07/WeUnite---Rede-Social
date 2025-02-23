@@ -2,11 +2,11 @@ import { Avatar, Divider, Flex, Text, useColorModeValue, SkeletonCircle, Skeleto
 import { useEffect, useRef, useState } from 'react';
 import Message from './Message';
 import MessageInput from './MessageInput';
-import useShowToast from '../hooks/useShowToast';
+import useShowToast from '../../hooks/useShowToast';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { conversationsAtom, selectedConversationAtom } from '../atoms/messagesAtom';
-import userAtom from '../atoms/userAtom';
-import { useSocket } from '../context/SocketContext';
+import { conversationsAtom, selectedConversationAtom } from '../../atoms/messagesAtom';
+import userAtom from '../../atoms/userAtom';
+import { useSocket } from '../../context/SocketContext';
 
 const MessageContainer = () => {
 

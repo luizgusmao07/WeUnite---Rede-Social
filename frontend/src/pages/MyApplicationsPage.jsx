@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import useShowToast from "../hooks/useShowToast";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";

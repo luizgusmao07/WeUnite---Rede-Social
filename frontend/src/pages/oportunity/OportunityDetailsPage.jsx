@@ -6,7 +6,7 @@ import useShowToast from "../../hooks/useShowToast";
 import useGetUserProfile from "../../hooks/useGetUserProfile";
 import postsAtom from "../../atoms/postsAtom";
 import userAtom from "../../atoms/userAtom";
-import Header from "../../components/Header";
+import Header from "../../components/header/Header";
 import { FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const OportunityDetailsPage = () => {

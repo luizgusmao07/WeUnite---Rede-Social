@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Avatar, Box, Button, Card, CardHeader, Flex, Heading, Link, Text, useColorMode } from "@chakra-ui/react"
-import useFollowUnfollow from "../hooks/useFollowUnfollow";
+import useFollowUnfollow from "../../hooks/useFollowUnfollow";
 import { Link as RouterLink } from 'react-router-dom'
 
 const SuggestedUser = ({ user }) => {

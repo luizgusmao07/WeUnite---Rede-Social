@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Heading, Text, useColorMode } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Heading, Text, useColorMode,} from '@chakra-ui/react'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useShowToast from '../hooks/useShowToast';
+import useShowToast from '../../hooks/useShowToast';
 
 const SuggestedOportunity = ({ title, text, _id, postedBy }) => {
     const { colorMode } = useColorMode();
@@ -49,6 +49,7 @@ const SuggestedOportunity = ({ title, text, _id, postedBy }) => {
     return (
         <Box>
             <Card
+                
                variant="outline"
                borderRadius="lg"
                shadow= {colorMode === "dark" ? "" : "md"} //Mudei

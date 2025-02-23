@@ -1,14 +1,14 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Avatar, Box, Flex, IconButton, Input, Link, Spacer, Text, useColorMode, Image } from "@chakra-ui/react";
-import "../index.css";
+import "../../index.css";
 import { IoHomeOutline } from "react-icons/io5";
 import { BsPeople } from "react-icons/bs";
 import { TfiLink } from "react-icons/tfi";
 import { IconContext } from "react-icons";
-import LogoutButton from "./Logout";
-import Notificacao from "./Notificacao";
+import LogoutButton from "../Logout";
+import Notificacao from "../Notificacao";
 import { useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
+import userAtom from "../../atoms/userAtom";
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from "react";
 import { IoChatbubblesOutline } from "react-icons/io5";
@@ -162,13 +162,12 @@ const Header = () => {
           <Box left="10%" transform="translateX(25%)"> {/*Mudei */}
             <Box maxH={"0"} display="flex" pt={2}
               justifyContent="center" alignItems="center" flex={1}
-
               pb={3}>
               <Link as={RouterLink} to={`/`}>
                 <Image
                   src={colorMode === "dark" ? "/public/WeUP.png" : "/public/WeUB.png"}
                   alt='Logo'
-                  width="200px"  // Define a largura da imagem
+                  width="185px"  // Define a largura da imagem
                   height="auto"  // Mantém a proporção original da imagem
                   fontSize={{ base: "25px", md: "30px", lg: "35px" }}
                   maxW={{ base: "100px", md: "150px", lg: "200px" }}

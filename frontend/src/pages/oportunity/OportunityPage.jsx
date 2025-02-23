@@ -5,7 +5,7 @@ import useShowToast from '../../hooks/useShowToast';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import oportunitiesAtom from "../../atoms/postsAtom";
 import { useNavigate } from 'react-router-dom';
-import Header from '../../components/Header';
+import Header from '../../components/header/Header';
 import CreateOportunity from '../../components/oportunities/CreateOportunity';
 import userAtom from '../../atoms/userAtom';
 

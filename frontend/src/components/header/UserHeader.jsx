@@ -10,8 +10,8 @@ import {
 } from "@chakra-ui/react";
 import { IoHomeOutline } from "react-icons/io5";
 import { FiEdit2 } from "react-icons/fi";
-import userAtom from '../atoms/userAtom';
-import useShowToast from '../hooks/useShowToast';
+import userAtom from '../../atoms/userAtom';
+import useShowToast from '../../hooks/useShowToast';
 
 const UserHeader = ({ user, username }) => {
   const currentUser = useRecoilValue(userAtom);

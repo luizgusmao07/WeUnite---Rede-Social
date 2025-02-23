@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { FaMapMarkerAlt, FaClock, FaEye } from 'react-icons/fa';
 import { useNavigate, useParams } from "react-router-dom"; // Importando useParams
-import Header from "../components/Header"; // Importando o cabeçalho da aplicação
+import Header from "../components/header/Header"; // Importando o cabeçalho da aplicação
 import useShowToast from "../hooks/useShowToast"; // Hook para exibir mensagens
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom"; // Acessando o estado global do usuário

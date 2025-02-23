@@ -1,5 +1,5 @@
 import { Box, Divider, Flex, HStack, Image, Spinner, Text, useColorMode } from "@chakra-ui/react"
-import UserHeader from "../components/UserHeader"
+import UserHeader from "../components/header/UserHeader"
 import Post from "../components/Post"
 import ProfileComment from "../components/ProfileComment"
 import { useEffect, useState } from "react"

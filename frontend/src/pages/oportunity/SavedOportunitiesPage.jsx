@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import useShowToast from '../../hooks/useShowToast';
 import { useRecoilValue } from 'recoil';
 import userAtom from '../../atoms/userAtom';
-import Header from "../../components/Header";
+import Header from "../../components/header/Header";
 
 const SavedOportunitiesPage = () => {
   const showToast = useShowToast();

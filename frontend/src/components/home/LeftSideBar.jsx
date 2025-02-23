@@ -1,7 +1,8 @@
-import { Box, Flex, Heading, Spinner, useColorMode } from '@chakra-ui/react';
+import { Box, Flex, Heading, Spinner, useColorMode, Button} from '@chakra-ui/react';
 import '../../index.css';
 import { useEffect, useState } from 'react';
-import SuggestedOportunity from '../SuggestedOportunity';
+import SuggestedOportunity from './SuggestedOportunity';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = () => {
     // Hook para acessar o modo de cor (claro ou escuro)
@@ -9,12 +10,15 @@ const SideBar = () => {
 
     // Estado para armazenar as oportunidades
     const [oportunities, setOportunities] = useState([]);
+    console.log(oportunities);
 
     // Estado para controlar o carregamento dos dados
     const [loading, setLoading] = useState(true);
 
     // Estado para armazenar mensagens de erro
     const [error, setError] = useState(null);
+
+    const navigate = useNavigate();
 
     // Efeito colateral para buscar oportunidades sugeridas ao montar o componente
     useEffect(() => {
@@ -62,7 +66,14 @@ const SideBar = () => {
                 borderRight={colorMode === "dark" ? "1px solid #343434" : "1px solid #959595"} // Borda direita baseada no modo de cor
             >
                 <Box>
-                    <Heading size={"md"} textAlign={"center"} mb={4}>Oportunidades</Heading> {/* Cabeçalho do componente */}
+                    <Heading size={""} textAlign={"center"} mb={4}>
+
+                        <Button size={"md"} variant={"plain"} onClick={() => {
+                            navigate("/oportunities")}   
+                        }>
+                            Oportunidades
+                        </Button>
+                    </Heading> {/* Cabeçalho do componente */}
                 </Box>
 
                 {/* Mapeia e exibe as oportunidades sugeridas */}

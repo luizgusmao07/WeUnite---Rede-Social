@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Avatar, Box, Flex, Image, Skeleton, Text, useColorModeValue,useColorMode } from "@chakra-ui/react";
-import { selectedConversationAtom } from "../atoms/messagesAtom";
+import { selectedConversationAtom } from "../../atoms/messagesAtom";
 import { useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
+import userAtom from "../../atoms/userAtom";
 import { BsCheck2All } from "react-icons/bs";
 import { useState } from "react";
-import CustomVideoPlayer from "./CustomVideoPlayer";
+import CustomVideoPlayer from "../CustomVideoPlayer";
 
 const Message = ({ ownMessage, message }) => {
 	const selectedConversation = useRecoilValue(selectedConversationAtom);

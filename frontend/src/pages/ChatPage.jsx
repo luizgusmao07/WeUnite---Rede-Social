@@ -1,10 +1,10 @@
 import { SearchIcon, ArrowBackIcon } from "@chakra-ui/icons"; //Mudei
 import { Box, Button, Flex, Input, Skeleton, SkeletonCircle, Text, useColorModeValue, useColorMode } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import Conversation from "../components/Conversation";
+import Conversation from "../components/chat/Conversation";
 import { GiConversation } from "react-icons/gi";
-import Header from "../components/Header";
-import MessageContainer from "../components/MessageContainer";
+import Header from "../components/header/Header";
+import MessageContainer from "../components/chat/MessageContainer";
 import useShowToast from "../hooks/useShowToast";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { conversationsAtom, selectedConversationAtom } from "../atoms/messagesAtom";

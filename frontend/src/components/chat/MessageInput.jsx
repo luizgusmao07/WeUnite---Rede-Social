@@ -22,11 +22,11 @@ import {
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { IoSendSharp } from "react-icons/io5";
-import useShowToast from "../hooks/useShowToast";
-import { conversationsAtom, selectedConversationAtom } from "../atoms/messagesAtom";
+import useShowToast from "../../hooks/useShowToast";
+import { conversationsAtom, selectedConversationAtom } from "../../atoms/messagesAtom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { BsFillImageFill } from "react-icons/bs";
-import usePreviewMedia from "../hooks/usePreviewMedia";
+import usePreviewMedia from "../../hooks/usePreviewMedia";
 import { FaVideo } from "react-icons/fa";
 
 const MessageInput = ({ setMessages }) => {
