@@ -76,7 +76,7 @@ const MyApplicationsPage = () => {
     };
 
     const handleViewDetails = (oid) => {
-        navigate(`/oportunities/${oid}`);
+        navigate(`/oportunity/oportunities/${oid}`);
     };
 
     if (isLoading) {
