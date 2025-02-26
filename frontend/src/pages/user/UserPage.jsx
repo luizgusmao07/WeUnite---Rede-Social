@@ -1,16 +1,18 @@
 import { Box, Divider, Flex, HStack, Image, Spinner, Text, useColorMode } from "@chakra-ui/react"
-import UserHeader from "../components/header/UserHeader"
-import Post from "../components/Post"
-import ProfileComment from "../components/ProfileComment"
+import UserHeader from "../../components/header/UserHeader"
+import Post from "../../components/user/Post"
+import ProfileComment from "../../components/user/ProfileComment"
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import useShowToast from '../hooks/useShowToast' // Hook para exibir mensagens de toast
-import useGetUserProfile from "../hooks/useGetUserProfile" // Hook para obter o perfil do usuário
+import useShowToast from '../../hooks/useShowToast' // Hook para exibir mensagens de toast
+import useGetUserProfile from "../../hooks/useGetUserProfile" // Hook para obter o perfil do usuário
 import { useRecoilState } from "recoil"
-import postsAtom from "../atoms/postsAtom" // Átomo para gerenciar o estado dos posts
-import commentsAtom from "../atoms/commentsAtom" // Átomo para gerenciar o estado dos posts
-import oportunitiesAtom from "../atoms/oportunitiesAtom"
+import postsAtom from "../../atoms/postsAtom" // Átomo para gerenciar o estado dos posts
+import commentsAtom from "../../atoms/commentsAtom" // Átomo para gerenciar o estado dos posts
+import oportunitiesAtom from "../../atoms/oportunitiesAtom"
 import { Link as RouterLink } from 'react-router-dom';
+import { Pointer } from "lucide-react"
+import { MotionValue } from "framer-motion"
 
 
 const UserPage = () => {
@@ -135,7 +137,7 @@ const UserPage = () => {
               color={activeTab === 'posts' ? (colorMode === "light" ? '#000000' : '#ffffff') : '#343434'}
               borderBottom={activeTab === 'posts' ? (colorMode === "light" ? '2px solid #000000' : '2px solid #ffffff') : '1px solid #343434'}
             >
-              <Text mb={3}>Publicações</Text>
+              <Text mb={3} cursor={"pointer"} >Publicações</Text>
             </Flex>
 
             <Flex
@@ -147,7 +149,7 @@ const UserPage = () => {
               color={activeTab === 'comments' ? (colorMode === "light" ? '#000000' : '#ffffff') : '#959595'}
               borderBottom={activeTab === 'comments' ? (colorMode === "light" ? '2px solid #000000' : '2px solid #ffffff') : '1px solid #343434'}
             >
-              <Text mb={3}>Comentários</Text>
+              <Text mb={3} cursor={"pointer"}>Comentários</Text>
             </Flex>
 
             {opportunities.length > 0 && (
@@ -159,7 +161,7 @@ const UserPage = () => {
                 onClick={() => handleTabChange('opportunities')}
                 color={activeTab === 'opportunities' ? (colorMode === "light" ? '#000000' : '#ffffff') : '#959595'}
                 borderBottom={activeTab === 'opportunities' ? (colorMode === "light" ? '2px solid #000000' : '2px solid #ffffff') : '1px solid #343434'}>
-                <Text mb={3}>Oportunidades</Text>
+                <Text mb={3} cursor={"pointer"}>Oportunidades</Text>
               </Flex>
             )}
           </Flex>

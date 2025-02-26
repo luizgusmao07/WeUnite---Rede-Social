@@ -1,10 +1,10 @@
 import { Container } from "@chakra-ui/react";
 import PostPage from "./pages/PostPage";
-import UserPage from "./pages/UserPage";
+import UserPage from "./pages/user/UserPage";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AuthPage from "./pages/auth/AuthPage";
 import HomePage from "./pages/HomePage";
-import UpdateProfilePage from "./pages/UpdateProfilePage";
+import UpdateProfilePage from "./pages/user/UpdateProfilePage";
 import CreatePost from "./components/CreatePost";
 import CreateOportunity from "./components/oportunities/CreateOportunity";
 import ChatPage from "./pages/ChatPage";
@@ -18,7 +18,7 @@ import SavedOportunitiesPage from "./pages/oportunity/SavedOportunitiesPage";
 import { useRecoilValue } from "recoil";
 import userAtom from "./atoms/userAtom";
 import MyApplicationsPage from "./pages/MyApplicationsPage";
-import ClubOpportunitiesPage from "./pages/ClubOpportunitiesPage";
+import ClubOpportunitiesPage from "./pages/oportunity/ClubOpportunitiesPage";
 import OpportunityApplicationsPage from "./pages/oportunity/OpportunityApplicationsPage";
 
 function App() {

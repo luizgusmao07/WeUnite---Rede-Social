@@ -1,7 +1,7 @@
 import { Flex, Spinner } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import useShowToast from "../../hooks/useShowToast";
-import PostHome from "../PostHome";
+import PostHome from "./PostHome";
 import { useRecoilState } from "recoil";
 import postsAtom from "../../atoms/postsAtom";
 

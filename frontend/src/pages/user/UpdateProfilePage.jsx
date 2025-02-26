@@ -24,10 +24,10 @@ import {
     Text
 } from '@chakra-ui/react'
 import { useRef, useState } from 'react'
-import userAtom from '../atoms/userAtom'
+import userAtom from '../../atoms/userAtom'
 import { useRecoilState } from 'recoil'
-import usePreviewImg from '../hooks/usePreviewImg' // Hook para visualizar imagem de perfil
-import useShowToast from '../hooks/useShowToast' // Hook para exibir mensagens de toast
+import usePreviewImg from '../../hooks/usePreviewImg' // Hook para visualizar imagem de perfil
+import useShowToast from '../../hooks/useShowToast' // Hook para exibir mensagens de toast
 import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 import AvatarEditor from 'react-avatar-edit'

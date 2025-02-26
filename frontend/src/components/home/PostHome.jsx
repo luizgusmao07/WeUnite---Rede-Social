@@ -26,11 +26,11 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import { MoreVertical, Share2, Flag } from 'lucide-react';
-import Actions from "./Actions";
-import CustomVideoPlayer from "./CustomVideoPlayer";
-import postsAtom from "../atoms/postsAtom";
-import userAtom from "../atoms/userAtom";
-import useShowToast from "../hooks/useShowToast";
+import Actions from "../Actions";
+import CustomVideoPlayer from "../CustomVideoPlayer";
+import postsAtom from "../../atoms/postsAtom";
+import userAtom from "../../atoms/userAtom";
+import useShowToast from "../../hooks/useShowToast";
 import { ptBR } from 'date-fns/locale';
 
 const PostHome = ({ post, postedBy }) => {
