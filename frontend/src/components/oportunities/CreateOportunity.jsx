@@ -127,6 +127,7 @@ const CreatePost = () => {
                 showToast("Error", data.error, "error");
                 return;
             }
+            
             showToast("Sucesso", "Oportunidade criada com sucesso", "success");
 
             // Atualiza a lista de oportunidades se o usuário for o mesmo

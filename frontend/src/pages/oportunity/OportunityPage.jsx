@@ -99,6 +99,8 @@ const OportunityPage = () => {
                   </HStack>
                 </Box>
 
+                
+
                 <br />
                 {user && user.isClub === true && (
                   <Box p={4} bg={boxBg2} border={colorMode === "dark" ? "1px solid #101010" : ""} borderRadius="md" shadow="md" onClick={handleClubOpportunitiesPage} cursor="pointer">

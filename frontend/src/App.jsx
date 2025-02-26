@@ -21,6 +21,7 @@ import MyApplicationsPage from "./pages/MyApplicationsPage";
 import ClubOpportunitiesPage from "./pages/oportunity/ClubOpportunitiesPage";
 import OpportunityApplicationsPage from "./pages/oportunity/OpportunityApplicationsPage";
 
+
 function App() {
     const user = useRecoilValue(userAtom);
     console.log(user);
@@ -71,6 +72,7 @@ function App() {
                     path="/oportunities/:oid/applicants" 
                     element={user && user.userType === "Clube" ? <OpportunityApplicationsPage /> : <Navigate to="/" />} 
                 />
+
             </Routes>
 
             {/* {user && <LogoutButton />} */}
