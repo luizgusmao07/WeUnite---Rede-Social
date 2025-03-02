@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useSocket } from '../context/SocketContext';
+import { useSocket } from '../../context/SocketContext';
 import { useRecoilValue } from 'recoil';
-import userAtom from '../atoms/userAtom';
+import userAtom from '../../atoms/userAtom';
 import {
     Drawer,
     DrawerBody,

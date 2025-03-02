@@ -20,13 +20,13 @@ import {
     Box
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import usePreviewMedia from "../hooks/usePreviewMedia";
+import usePreviewMedia from "../../hooks/usePreviewMedia";
 import { BsFillImageFill } from "react-icons/bs";
 import { FaVideo } from "react-icons/fa";
 import { useRecoilState, useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
-import useShowToast from "../hooks/useShowToast";
-import postsAtom from "../atoms/postsAtom";
+import userAtom from "../../atoms/userAtom";
+import useShowToast from "../../hooks/useShowToast";
+import postsAtom from "../../atoms/postsAtom";
 import { useParams } from "react-router-dom";
 
 const MAX_CHAR = 500;

@@ -5,10 +5,10 @@ import {
     ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure, useColorMode
 } from "@chakra-ui/react";
 import { useState } from "react";
-import useShowToast from "../hooks/useShowToast";
-import userAtom from "../atoms/userAtom";
+import useShowToast from "../../hooks/useShowToast";
+import userAtom from "../../atoms/userAtom";
 import { useRecoilState, useRecoilValue } from "recoil";
-import postsAtom from "../atoms/postsAtom";
+import postsAtom from "../../atoms/postsAtom";
 
 const Actions = ({ post }) => {
     // Estado global e informações do usuário

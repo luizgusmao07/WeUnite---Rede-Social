@@ -1,7 +1,7 @@
 import { Avatar, Link, Menu, MenuButton, MenuItem, MenuList, useColorMode } from "@chakra-ui/react"
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import userAtom from "../atoms/userAtom";
-import useShowToast from "../hooks/useShowToast";
+import userAtom from "../../atoms/userAtom";
+import useShowToast from "../../hooks/useShowToast";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 // Componente para o botão de logout

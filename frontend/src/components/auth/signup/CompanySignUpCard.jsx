@@ -22,7 +22,7 @@ import useShowToast from '../../../hooks/useShowToast';
 
 // Importe seus átomos e hooks aqui
 import authScreenAtom from '../../../atoms/authAtom';
-import TermsCheckbox from '../../TermsCheckBox';
+import TermsCheckbox from '../TermsCheckBox';
 
 const validateCNPJ = (cnpj) => {
     cnpj = cnpj.replace(/\D/g, ''); // Remove caracteres não numéricos

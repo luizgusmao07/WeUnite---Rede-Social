@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import userAtom from "../../atoms/userAtom";
 import { BsCheck2All } from "react-icons/bs";
 import { useState } from "react";
-import CustomVideoPlayer from "../CustomVideoPlayer";
+import CustomVideoPlayer from "../videos/CustomVideoPlayer";
 
 const Message = ({ ownMessage, message }) => {
 	const selectedConversation = useRecoilValue(selectedConversationAtom);

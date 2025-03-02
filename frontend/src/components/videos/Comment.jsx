@@ -2,7 +2,7 @@
 import { DeleteIcon } from '@chakra-ui/icons';
 import { Avatar, Divider, Flex, Link, Text } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import useShowToast from '../hooks/useShowToast';
+import useShowToast from '../../hooks/useShowToast';
 
 
 const Comment = ({ reply, lastReply, post, currentUser, onCommentDeleted }) => {
