@@ -5,7 +5,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import AuthPage from "./pages/auth/AuthPage";
 import HomePage from "./pages/HomePage";
 import UpdateProfilePage from "./pages/user/UpdateProfilePage";
-import CreatePost from "./components/CreatePost";
+import CreatePost from "./components/user/CreatePost";
 import CreateOportunity from "./components/oportunities/CreateOportunity";
 import ChatPage from "./pages/ChatPage";
 import OportunityPage from "./pages/oportunity/OportunityPage";
