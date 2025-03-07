@@ -3,15 +3,15 @@ import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import useGetUserProfile from "../hooks/useGetUserProfile";
 import { useEffect } from "react";
 import useShowToast from "../hooks/useShowToast";
-import Actions from "../components/Actions";
+import Actions from "../components/videos/Actions";
 import { formatDistanceToNow } from "date-fns";
 import { useRecoilState, useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { DeleteIcon } from "@chakra-ui/icons";
-import Comment from "../components/Comment";
+import Comment from "../components/videos/Comment";
 import postsAtom from "../atoms/postsAtom";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import CustomVideoPlayer from "../components/CustomVideoPlayer";
+import CustomVideoPlayer from "../components/videos/CustomVideoPlayer";
 
 const PostPage = () => {
   const { user, loading } = useGetUserProfile();

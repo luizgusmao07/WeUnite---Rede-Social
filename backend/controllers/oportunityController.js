@@ -330,6 +330,7 @@ const getSavedOportunities = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
 export const getAppliedOportunities = async (req, res) => {
     try {
         const { username } = req.params;
@@ -350,6 +351,7 @@ export const getAppliedOportunities = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
 export const getOpportunityApplicants = async (req, res) => {
     try {
         const { id } = req.params;
@@ -370,4 +372,5 @@ export const getOpportunityApplicants = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
 export { createOportunity, getOportunity, deleteOportunity, likeUnlikeOportunity, replyToOportunity, getFeedOportunities, getUserOportunities, getSuggestedOportunities, applyToOportunity, saveUnsaveOportunity, checkIfSaved, getSavedOportunities }

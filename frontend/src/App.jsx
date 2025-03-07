@@ -1,25 +1,26 @@
 import { Container } from "@chakra-ui/react";
 import PostPage from "./pages/PostPage";
-import UserPage from "./pages/UserPage";
+import UserPage from "./pages/user/UserPage";
 import { Navigate, Route, Routes } from "react-router-dom";
-import AuthPage from "./pages/AuthPage";
+import AuthPage from "./pages/auth/AuthPage";
 import HomePage from "./pages/HomePage";
-import UpdateProfilePage from "./pages/UpdateProfilePage";
-import CreatePost from "./components/CreatePost";
-import CreateOportunity from "./components/CreateOportunity";
+import UpdateProfilePage from "./pages/user/UpdateProfilePage";
+import CreatePost from "./components/user/CreatePost";
+import CreateOportunity from "./components/oportunities/CreateOportunity";
 import ChatPage from "./pages/ChatPage";
-import OportunityPage from "./pages/OportunityPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
-import VerifyResetCodePage from "./pages/VerifyResetCodePage";
-import VerifyEmailPage from "./pages/VerifyEmailPage";
-import OportunityDetailsPage from "./pages/OportunityDetailsPage";
-import SavedOportunitiesPage from "./pages/SavedOportunitiesPage";
+import OportunityPage from "./pages/oportunity/OportunityPage";
+import ForgotPasswordPage from "./pages/auth/ForgotPasswordPage";
+import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
+import VerifyResetCodePage from "./pages/auth/VerifyResetCodePage";
+import VerifyEmailPage from "./pages/auth/VerifyEmailPage";
+import OportunityDetailsPage from "./pages/oportunity/OportunityDetailsPage";
+import SavedOportunitiesPage from "./pages/oportunity/SavedOportunitiesPage";
 import { useRecoilValue } from "recoil";
 import userAtom from "./atoms/userAtom";
 import MyApplicationsPage from "./pages/MyApplicationsPage";
-import ClubOpportunitiesPage from "./pages/ClubOpportunitiesPage";
-import OpportunityApplicationsPage from "./pages/OpportunityApplicationsPage";
+import ClubOpportunitiesPage from "./pages/oportunity/ClubOpportunitiesPage";
+import OpportunityApplicationsPage from "./pages/oportunity/OpportunityApplicationsPage";
+
 
 function App() {
     const user = useRecoilValue(userAtom);
@@ -71,6 +72,7 @@ function App() {
                     path="/oportunities/:oid/applicants" 
                     element={user && user.userType === "Clube" ? <OpportunityApplicationsPage /> : <Navigate to="/" />} 
                 />
+
             </Routes>
 
             {/* {user && <LogoutButton />} */}

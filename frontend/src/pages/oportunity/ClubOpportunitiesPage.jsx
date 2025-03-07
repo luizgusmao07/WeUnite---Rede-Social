@@ -12,31 +12,31 @@ import {
     useColorMode,
     Spinner
 } from "@chakra-ui/react";
-import { FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import { useParams, useNavigate } from "react-router-dom";
-import Header from "../components/header/Header";
-import useShowToast from "../hooks/useShowToast";
+import { FaMapMarkerAlt, FaClock, FaEye } from 'react-icons/fa';
+import { useNavigate, useParams } from "react-router-dom"; // Importando useParams
+import Header from "../../components/header/Header"; // Importando o cabeçalho da aplicação
+import useShowToast from "../../hooks/useShowToast"; // Hook para exibir mensagens
 import { useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
+import userAtom from "../../atoms/userAtom"; // Acessando o estado global do usuário
 
-const MyApplicationsPage = () => {
-    const [applications, setApplications] = useState([]);
+const ClubOportunitiesPage = () => {
+    const { club } = useParams(); // Acessando o parâmetro 'club' da URL
+    const [opportunities, setOpportunities] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const { username } = useParams();
     const showToast = useShowToast();
     const navigate = useNavigate();
     const { colorMode } = useColorMode();
-    const currentUser = useRecoilValue(userAtom);
+    const currentUser = useRecoilValue(userAtom); // Obtendo informações do usuário atual
 
     const bg = useColorModeValue('gray.200', '#0A0A0A');
     const boxBg = useColorModeValue('gray.100', '#000000');
     const textColor = useColorModeValue('gray.600', 'gray.300');
 
     useEffect(() => {
-        const fetchApplications = async () => {
+        const fetchClubOpportunities = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch(`/api/oportunities/applied-oportunities/${currentUser.username}`);
+                const response = await fetch(`/api/oportunities/user/${club}`); // Usando o parâmetro 'club' na requisição
                 const data = await response.json();
 
                 if (data.error) {
@@ -44,7 +44,7 @@ const MyApplicationsPage = () => {
                     return;
                 }
 
-                setApplications(data);
+                setOpportunities(data); // Atualizando as oportunidades
             } catch (error) {
                 showToast("Error", error.message, "error");
             } finally {
@@ -52,13 +52,21 @@ const MyApplicationsPage = () => {
             }
         };
 
-        fetchApplications();
-    }, [currentUser.username, showToast]);
+        fetchClubOpportunities();
+    }, [club, showToast]); // Atualiza as oportunidades sempre que 'club' mudar
 
-    const handleCancelApplication = async (oid) => {
+    const handleViewApplicants = (opportunityId) => {
+        navigate(`/oportunities/${opportunityId}/applicants`);
+    };
+
+    const handleEditOpportunity = (opportunityId) => {
+        showToast("Info", "Funcionalidade de edição em desenvolvimento", "info");
+    };
+
+    const handleDeleteOpportunity = async (opportunityId) => {
         try {
-            const response = await fetch(`/api/oportunities/apply/${oid}`, {
-                method: "POST",
+            const response = await fetch(`/api/oportunities/${opportunityId}`, {
+                method: 'DELETE',
             });
             const data = await response.json();
 
@@ -67,16 +75,11 @@ const MyApplicationsPage = () => {
                 return;
             }
 
-            // Remove the application from the list
-            setApplications(prev => prev.filter(opp => opp._id !== oid));
-            showToast("Sucesso", "Inscrição cancelada!", "success");
+            setOpportunities(prev => prev.filter(opp => opp._id !== opportunityId)); // Remover a oportunidade da lista
+            showToast("Sucesso", "Oportunidade excluída!", "success");
         } catch (error) {
             showToast("Erro", error.message, "error");
         }
-    };
-
-    const handleViewDetails = (oid) => {
-        navigate(`/oportunity/oportunities/${oid}`);
     };
 
     if (isLoading) {
@@ -100,20 +103,20 @@ const MyApplicationsPage = () => {
                     p={4}
                 >
                     <Text fontSize="2xl" fontWeight="bold" mb={6} textAlign="center">
-                        Minhas Inscrições
+                        Oportunidades do Clube {club}
                     </Text>
 
-                    {applications.length === 0 ? (
+                    {opportunities.length === 0 ? (
                         <Flex justifyContent="center" alignItems="center" height="300px">
                             <Text color={textColor} fontSize="lg">
-                                Você não tem inscrições em nenhuma oportunidade.
+                                Não há oportunidades para este clube.
                             </Text>
                         </Flex>
                     ) : (
                         <VStack spacing={4} width="full">
-                            {applications.map((oportunity) => (
+                            {opportunities.map((opportunity) => (
                                 <Flex 
-                                    key={oportunity._id} 
+                                    key={opportunity._id} 
                                     width="full" 
                                     bg={colorMode === "dark" ? "#1A1A1A" : "white"} 
                                     borderRadius="md" 
@@ -121,8 +124,8 @@ const MyApplicationsPage = () => {
                                     boxShadow="sm"
                                 >
                                     <Image 
-                                        src={oportunity.img} 
-                                        alt={oportunity.title} 
+                                        src={opportunity.img} 
+                                        alt={opportunity.title} 
                                         boxSize="64px" 
                                         mr={4} 
                                         objectFit="cover" 
@@ -130,37 +133,47 @@ const MyApplicationsPage = () => {
                                     />
                                     <VStack align="flex-start" flex={1} spacing={1}>
                                         <Text fontSize="lg" fontWeight="bold">
-                                            {oportunity.title}
+                                            {opportunity.title}
                                         </Text>
                                         <HStack spacing={4} color={textColor} fontSize="sm">
                                             <Flex align="center">
                                                 <Icon as={FaMapMarkerAlt} mr={1} />
-                                                {oportunity.location}
+                                                {opportunity.location}
                                             </Flex>
                                             <Flex align="center">
                                                 <Icon as={FaClock} mr={1} />
-                                                {new Date(oportunity.applicationDeadline).toLocaleDateString()}
+                                                {new Date(opportunity.applicationDeadline).toLocaleDateString()}
                                             </Flex>
                                         </HStack>
                                         <Text color={textColor} fontSize="sm">
-                                            Inscrições: {oportunity.applications?.length || 0} / {oportunity.maxApplications}
+                                            Inscrições: {opportunity.applications?.length || 0} / {opportunity.maxApplications}
                                         </Text>
                                         <Flex width="full" justifyContent="space-between" mt={2}>
                                             <Button 
                                                 size="sm" 
-                                                variant="outline" 
-                                                onClick={() => handleViewDetails(oportunity._id)}
+                                                colorScheme="green"
+                                                leftIcon={<FaEye />}
+                                                onClick={() => handleViewApplicants(opportunity._id)}
                                             >
-                                                Ver Detalhes
+                                                Ver Inscritos
                                             </Button>
-                                            <Button 
-                                                size="sm" 
-                                                colorScheme="red" 
-                                                variant="ghost"
-                                                onClick={() => handleCancelApplication(oportunity._id)}
-                                            >
-                                                Cancelar Inscrição
-                                            </Button>
+                                            <HStack>
+                                                <Button 
+                                                    size="sm" 
+                                                    variant="outline"
+                                                    onClick={() => handleEditOpportunity(opportunity._id)}
+                                                >
+                                                    Editar
+                                                </Button>
+                                                <Button 
+                                                    size="sm" 
+                                                    colorScheme="red"
+                                                    variant="ghost"
+                                                    onClick={() => handleDeleteOpportunity(opportunity._id)}
+                                                >
+                                                    Excluir
+                                                </Button>
+                                            </HStack>
                                         </Flex>
                                     </VStack>
                                 </Flex>
@@ -173,4 +186,4 @@ const MyApplicationsPage = () => {
     );
 };
 
-export default MyApplicationsPage;
+export default ClubOportunitiesPage;
