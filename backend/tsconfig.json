@@ -1,0 +1,45 @@
+{
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "compilerOptions": {
+    // Configurações básicas
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    
+    // Melhorias de compilação
+    "sourceMap": true,              // Gera source maps para depuração
+    "declaration": true,            // Gera arquivos de declaração (.d.ts)
+    "noEmitOnError": true,          // Não emitir arquivos se houver erros
+    "noEmit": true,                 // Mantendo sua configuração atual
+    
+    // Verificação de tipos aprimorada
+    "noImplicitAny": true,          // Erro em tipos 'any' implícitos
+    "strictNullChecks": true,       // Verificação rigorosa para null/undefined
+    "strictFunctionTypes": true,    // Verificação mais rigorosa para tipos de função
+    "strictBindCallApply": true,    // Verificação de tipos para métodos bind/call/apply
+    
+    // Interoperabilidade
+    "esModuleInterop": true,        // Facilita interoperabilidade entre sistemas de módulos
+    "resolveJsonModule": true,      // Permite importação direta de arquivos JSON
+    
+    // Paths e aliases (opcional)
+    "baseUrl": "./src",             // Base para resolução de caminhos
+    "paths": {                      // Cria atalhos para importação
+      "@/*": ["*"],
+      "@models/*": ["db/models/*"],
+      "@controllers/*": ["src/api/controllers/*"],
+      "@middlewares/*": ["middlewares/*"]
+    },
+    
+    // Recursos do ES moderno
+    "experimentalDecorators": true, // Suporte a decoradores
+    "emitDecoratorMetadata": true,  // Metadados para decoradores
+    
+    // Outras configurações úteis
+    "skipLibCheck": true,           // Pula verificação de tipos em bibliotecas externas
+    "forceConsistentCasingInFileNames": true // Garante consistência no caso dos nomes de arquivos
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
+}
