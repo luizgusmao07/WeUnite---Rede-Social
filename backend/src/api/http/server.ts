@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import { v2 as cloudinary } from "cloudinary";
 import cors from "cors";
 import authRoutes from "../routes/authRoutes.ts";
+import postsRoutes from "../routes/postsRoutes.ts";
 
 import { app, server } from "./socket.ts";
 
@@ -32,6 +33,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
+app.use("/api/posts", postsRoutes);
 
 // Iniciar o servidor
 server.listen(PORT, () => console.log(`🚀 Server started at http://localhost:${PORT}`));

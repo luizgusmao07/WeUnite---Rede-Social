@@ -7,6 +7,7 @@ import { verifyEmail } from "../controllers/auth/verifications/verifyEmail.ts";
 import { verifyResetPasswordCode } from "../controllers/auth/verifications/verifyResetPasswordCode.ts";
 import { forgotPassword } from "../controllers/auth/password-operations/forgotPassword.ts";
 import { resetPassword } from "../controllers/auth/password-operations/resetPassword.ts";
+import { logout } from "../controllers/auth/login/logout.ts";
 
 
 
@@ -23,9 +24,13 @@ router.post("/signupcompany", async (req: Request, res: Response) => {
 	await signupcompany(req, res);
 })
 
-//Login
+//Login e logout
 router.post("/login", async (req: Request, res: Response) => {
 	await login(req, res);
+});
+
+router.post("/logout", async (req: Request, res: Response) => {
+	await logout(req, res);
 });
 
 //Verificações
