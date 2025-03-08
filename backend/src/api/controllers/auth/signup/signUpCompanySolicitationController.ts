@@ -3,21 +3,10 @@ import checkExistingUser from "../../functions/checkExistingUser.ts";
 import { Request, Response } from 'express';
 import { formatData } from "../../functions/formatData.ts";
 import { validateRequiredFields } from "../../functions/validateRequiredFields.ts";
+import ISignUpCompanyRequestBody from "./interfaces/ISignUpCompanyRequestBody.ts";
+import ISignUpCompanySolicitationResponse from "./interfaces/ISignUpCompanySolicitationResponse.ts";
 
-interface SignUpCompanyRequestBody {
-    email: string;
-    cnpj: string;
-    name: string;
-    username: string;
-}
-
-interface SignUpCompanySolicitationResponse {
-    success: boolean;
-    message: string;
-    errors?: Record<string, string>;
-}
-
-export const signupcompanysolicitation = async (req: Request<{}, {}, SignUpCompanyRequestBody>, res: Response<SignUpCompanySolicitationResponse>): Promise<Response<SignUpCompanySolicitationResponse>> => {
+export const signupcompanysolicitation = async (req: Request<{}, {}, ISignUpCompanyRequestBody>, res: Response<ISignUpCompanySolicitationResponse>): Promise<Response<ISignUpCompanySolicitationResponse>> => {
     try {
         const { email, cnpj, name, username } = req.body;
 

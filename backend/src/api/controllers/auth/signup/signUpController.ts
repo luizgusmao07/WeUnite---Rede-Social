@@ -6,25 +6,12 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import checkExistingUser from "../../functions/checkExistingUser.ts";
 import { validateRequiredFields } from "../../functions/validateRequiredFields.ts";
+import ISignUpRequestBody from "./interfaces/ISignUpRequestBody.ts";
+import ISignUpResponse from "./interfaces/ISignUpResponse.ts";
 
-interface SignUpRequestBody {
-    email: string;
-    password: string;
-    name: string;
-    username: string;
-} 
 
-interface SignUpResponse {
-    success: boolean;
-    message: string;
-    user?: {
-        _id: string;
-        name: string;
-        email: string;
-        username: string;
-        isVerified: boolean;
-    };
-} 
+
+
 
 const PASSWORD_MIN_LENGTH = 8;
 const VERIFICATION_TOKEN_EXPIRY = 24 * 60 * 60 * 1000; // 24 horas
@@ -61,9 +48,9 @@ async function createUser(
 }
 
 export const signup = async (
-    req: Request<{}, {}, SignUpRequestBody>,
-    res: Response<SignUpResponse>
-): Promise<Response<SignUpResponse>> => {
+    req: Request<{}, {}, ISignUpRequestBody>,
+    res: Response<ISignUpResponse>
+): Promise<Response<ISignUpResponse>> => {
     try {
         const { email, password, name, username } = req.body;
 

@@ -2,27 +2,10 @@ import User from "@/db/models/userModel.ts";
 import generateTokenAndSetCookie from "@/utils/generateAndSetCookie.ts";
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
+import LoginRequestBody from "./interfaces/LoginRequestBody.ts";
+import LoginResponse from "./interfaces/LoginResponse.ts";
 
-interface LoginRequestBody {
-    username: string;
-    password: string;
-}
-
-interface LoginResponse {
-    success: boolean;
-    message: string;
-    user?: {
-        _id: string;
-        name: string;
-        email: string;
-        username: string;
-        bio: string;
-        profilePic: string;
-        isClub: boolean;
-    }
-
-}
-export const login = async (req: Request<{}, {}, LoginRequestBody>, res: Response<LoginResponse>) => {
+export const login = async (req: Request<{}, {}, LoginRequestBody>, res: Response<LoginResponse>): Promise<Response<LoginResponse>> => {
 
     try {
         const { username, password } = req.body;
@@ -51,7 +34,7 @@ export const login = async (req: Request<{}, {}, LoginRequestBody>, res: Respons
 
         await user.save();
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: "Login successful",
             user: {
@@ -65,7 +48,7 @@ export const login = async (req: Request<{}, {}, LoginRequestBody>, res: Respons
             }
         });
     } catch (error: any) {
-        res.status(500).json({ success: false, message: error.message });
         console.log("Error in loginUser: ", error.message);
+        return res.status(500).json({ success: false, message: error.message });
     }
 };

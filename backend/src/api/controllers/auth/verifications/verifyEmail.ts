@@ -3,7 +3,7 @@ import User from "@/db/models/userModel.ts";
 import generateTokenAndSetCookie from "@/utils/generateAndSetCookie.ts";
 import { Request, Response } from "express";
 
-export const verifyEmail = async (req: Request, res: Response) => {
+export const verifyEmail = async (req: Request, res: Response): Promise<Response> => {
 	const { code } = req.body;
 	try {
 		const user = await User.findOne({
@@ -25,7 +25,7 @@ export const verifyEmail = async (req: Request, res: Response) => {
 
 		await sendWelcomeEmail({email: user.email, name: user.name});
 
-		res.status(200).json({
+		return res.status(200).json({
 			success: true,
 			message: "Email verificado com sucesso",
 			user: {
@@ -38,6 +38,6 @@ export const verifyEmail = async (req: Request, res: Response) => {
 		});
 	} catch (error) {
 		console.log("Erro em verifyEmail backend", error);
-		res.status(500).json({ success: false, message: "Erro no servidor" });
+		return res.status(500).json({ success: false, message: "Erro no servidor" });
 	}
 };

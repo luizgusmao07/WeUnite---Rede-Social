@@ -7,29 +7,11 @@ import mongoose from "mongoose";
 import User from '@/db/models/userModel.ts';
 import { formatData } from '../../functions/formatData.ts';
 import { validateRequiredFields } from '../../functions/validateRequiredFields.ts'; // Certifique-se de que o caminho está correto
+import ISignUpCompanyRequestBody from './interfaces/ISignUpCompanyRequestBody.ts';
+import ISignUpCompanyResponse from './interfaces/ISignUpCompanyResponse.ts';
 
-interface SignUpCompanyRequestBody {
-    email: string;
-    cnpj: string;
-    name: string;
-    username: string;
-}
 
-interface SignUpCompanyResponse {
-    success: boolean;
-    message: string;
-    user?: {
-        _id: string;
-        email: string;
-        cnpj: string;
-        name: string;
-        username: string;
-        isClub: boolean; 
-        isVerified: boolean;
-    };   
-}
-
-export const signupcompany = async (req: Request<{}, {}, SignUpCompanyRequestBody>, res: Response<SignUpCompanyResponse>) => {
+export const signupcompany = async (req: Request<{}, {}, ISignUpCompanyRequestBody>, res: Response<ISignUpCompanyResponse>): Promise<Response<ISignUpCompanyResponse>> => {
     try {
         const { email, cnpj, name, username } = req.body;
 
@@ -72,7 +54,7 @@ export const signupcompany = async (req: Request<{}, {}, SignUpCompanyRequestBod
 
         await sendWelcomeEmailCompany({ email, name, username, password });
 
-        res.status(201).json({
+        return res.status(201).json({
             success: true,
             message: "Usuário criado com sucesso",
             user: {
@@ -86,6 +68,7 @@ export const signupcompany = async (req: Request<{}, {}, SignUpCompanyRequestBod
             }
         });
     } catch (error: any) {
-        res.status(500).json({ success: false, message: error.message });
+        console.log("Error in signUpCompany: ", error.message);
+        return res.status(500).json({ success: false, message: error.message });
     }
 };
