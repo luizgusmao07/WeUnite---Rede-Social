@@ -16,7 +16,7 @@ const Comment = ({ reply, lastReply, post, currentUser, onCommentDeleted }) => {
         }
 
         try {
-            const res = await fetch(`/api/posts/${post._id}/comments/${reply._id}`, {
+            const res = await fetch(`/api/posts/delete-comment/${post._id}/${reply._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

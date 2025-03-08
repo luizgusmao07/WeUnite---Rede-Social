@@ -36,6 +36,11 @@ export const authenticatedRequest = async (req: AuthRequest, res: Response, next
         // Attach user to the request object
         req.user = user;
 
+        if (!req.user) {
+            res.status(401).json({ message: "Não autorizado. Você não esta logado." });
+            return;
+        }
+
         next();
     } catch (error: any) {
         res.status(401).json({

@@ -9,10 +9,12 @@ interface IPost extends Document {
     mediaType: string;
     likes: mongoose.Types.ObjectId[];
     replies: {
+        _id: mongoose.Types.ObjectId;
         userId: mongoose.Types.ObjectId;
         text: string;
         userProfilePic: string;
         username: string;
+        createdAt: Date;
     }[];
 }
 

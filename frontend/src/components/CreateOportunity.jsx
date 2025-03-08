@@ -106,7 +106,7 @@ const CreatePost = () => {
     const handleCreateOportunity = async () => {
         setUpdating(true); // Inicia o estado de atualização
         try {
-            const res = await fetch("/api/oportunities/create", {
+            const res = await fetch("/api/oportunities/create-opportunity", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

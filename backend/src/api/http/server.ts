@@ -6,6 +6,9 @@ import { v2 as cloudinary } from "cloudinary";
 import cors from "cors";
 import authRoutes from "../routes/authRoutes.ts";
 import postsRoutes from "../routes/postsRoutes.ts";
+import notificationsRoutes from "../routes/notificationsRoutes.ts";
+import messageRoutes from "../routes/messageRoutes.ts";
+import usersRoutes from "../routes/usersRoutes.ts";
 
 import { app, server } from "./socket.ts";
 
@@ -33,7 +36,10 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
+app.use("/api/users", usersRoutes);
 app.use("/api/posts", postsRoutes);
+app.use("/api/notifications", notificationsRoutes)
+app.use("/api/messages", messageRoutes);
 
 // Iniciar o servidor
 server.listen(PORT, () => console.log(`🚀 Server started at http://localhost:${PORT}`));

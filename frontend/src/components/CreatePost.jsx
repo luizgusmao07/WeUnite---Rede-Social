@@ -59,7 +59,7 @@ const CreatePost = () => {
     const handleCreatePost = async () => {
         setUpdating(true);
         try {
-            const res = await fetch("/api/posts/create", {
+            const res = await fetch("/api/posts/create-post", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
