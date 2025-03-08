@@ -74,6 +74,7 @@ const createPost = async (req: AuthRequest, res: Response<ICreatePostResponse>):
             success: true,
             message: "Publicação criada com sucesso",
             post: {
+                postId: (newPost._id as { toString(): string }).toString(),
                 postedBy: newPost.postedBy.toString(),
                 text: newPost.text,
                 img: newPost.img,

@@ -2,6 +2,7 @@ interface ICreatePostResponse {
     success: boolean;
     message: string;
     post?: {
+        postId: string;
         postedBy: string;
         text: string;
         img?: string;

@@ -1,6 +1,7 @@
 import mongoose, { Document } from "mongoose";
 
 interface IPost extends Document {
+    postId: mongoose.Types.ObjectId;
     postedBy: mongoose.Types.ObjectId;
     text: string;
     img?: string;
