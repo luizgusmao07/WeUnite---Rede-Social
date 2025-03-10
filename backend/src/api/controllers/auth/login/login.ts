@@ -1,5 +1,5 @@
-import User from "@/db/models/userModel.ts";
-import generateTokenAndSetCookie from "@/utils/generateAndSetCookie.ts";
+import User from "../../../../db/models/userModel.ts";
+import generateTokenAndSetCookie from "../../../../utils/generateAndSetCookie.ts";
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import LoginRequestBody from "./interfaces/LoginRequestBody.ts";

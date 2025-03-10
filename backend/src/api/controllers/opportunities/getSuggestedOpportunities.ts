@@ -1,5 +1,5 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import Oportunity from "@/db/models/oportunityModel.ts";
+import { AuthRequest } from "../../../api/middlewares/authenticatedRequest.ts";
+import Oportunity from "../../../db/models/oportunityModel.ts";
 import { Response } from 'express';
 
 const getSuggestedOportunities = async (req: AuthRequest, res: Response): Promise<void> => {
@@ -15,7 +15,7 @@ const getSuggestedOportunities = async (req: AuthRequest, res: Response): Promis
         res.status(200).json(oportunities);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: "Server error. Please try again later." });
+        res.status(500).json({ error: "Erro ao buscar oportunidades sugeridas" });
     }
 };
 

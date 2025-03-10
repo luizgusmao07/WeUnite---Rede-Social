@@ -1,9 +1,9 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import Conversation from "@/db/models/chatModel.ts";
+import { AuthRequest } from "../../../api/middlewares/authenticatedRequest.ts";
+import Conversation from "../../../db/models/chatModel.ts";
 import { Response } from "express";
 import { v2 as cloudinary } from "cloudinary";
-import Message from "@/db/models/messageModel.ts";
-import { getRecipientSocketId, io } from "@/api/http/socket.ts";
+import Message from "../../../db/models/messageModel.ts";
+import { getRecipientSocketId, io } from "../../../api/http/socket.ts";
 
 async function sendMessage(req: AuthRequest, res: Response): Promise<void> {
     try {

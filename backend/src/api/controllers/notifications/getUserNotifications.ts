@@ -1,5 +1,5 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import Notification from "@/db/models/notificationModel.ts";
+import { AuthRequest } from "../../../api/middlewares/authenticatedRequest.ts";
+import Notification from "../../../db/models/notificationModel.ts";
 import { Response } from 'express';
 
 export const getUserNotifications = async (req: AuthRequest, res: Response): Promise<void> => {

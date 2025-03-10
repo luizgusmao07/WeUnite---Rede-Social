@@ -1,5 +1,5 @@
-import { sendPasswordResetEmail } from '@/config/mail/emails.ts';
-import User from '@/db/models/userModel.ts';
+import { sendPasswordResetEmail } from '../../../../config/mail/emails.ts';
+import User from '../../../../db/models/userModel.ts';
 import { Request, Response } from 'express';
 
 export const forgotPassword = async (req: Request, res: Response): Promise<Response> => {

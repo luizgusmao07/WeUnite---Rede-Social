@@ -1,14 +1,14 @@
 import { Response } from 'express';
-import Post from '@/db/models/postModel.ts';
-import User from '@/db/models/userModel.ts';
-import { AuthRequest } from '@/api/middlewares/authenticatedRequest.ts';
+import Post from '../../../db/models/postModel.ts';
+import User from '../../../db/models/userModel.ts';
+import { AuthRequest } from '../../middlewares/authenticatedRequest.ts';
 
 const getUserPosts = async (req: AuthRequest, res: Response): Promise<void> => {
     const { username } = req.params;
     try {
         const user = await User.findOne({ username });
         if (!user) {
-            res.status(404).json({ error: "User not found" });
+            res.status(404).json({ error: "Usuário não encontrado" });
             return;
         }
 

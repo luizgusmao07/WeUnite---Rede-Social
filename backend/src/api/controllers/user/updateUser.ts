@@ -1,9 +1,9 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import User from "@/db/models/userModel.ts";
+import { AuthRequest } from "../../middlewares/authenticatedRequest.ts";
+import User from "../../../db/models/userModel.ts";
 import { Response } from "express";
 import bcrypt from "bcrypt";
 import { v2 as cloudinary } from "cloudinary";
-import Post from "@/db/models/postModel.ts";
+import Post from "../../../db/models/postModel.ts";
 
 const updateUser = async (req: AuthRequest, res: Response): Promise<void> => {
 	try {

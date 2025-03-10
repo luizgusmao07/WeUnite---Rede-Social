@@ -1,7 +1,6 @@
-import { AuthRequest } from '@/api/middlewares/authenticatedRequest.ts';
-import Post from '@/db/models/postModel.ts';
-import User from '@/db/models/userModel.ts';
-import { create } from 'domain';
+import { AuthRequest } from '../../../../api/middlewares/authenticatedRequest.ts';
+import Post from '../../../../db/models/postModel.ts';
+import User from '../../../../db/models/userModel.ts';
 import { Response } from 'express';
 
 const getUserComments = async (req: AuthRequest, res: Response): Promise<void> => {

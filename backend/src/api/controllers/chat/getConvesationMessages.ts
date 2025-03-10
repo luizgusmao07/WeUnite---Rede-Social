@@ -1,6 +1,6 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import Conversation from "@/db/models/chatModel.ts";
-import Message from "@/db/models/messageModel.ts";
+import { AuthRequest } from "../../../api/middlewares/authenticatedRequest.ts";
+import Conversation from "../../../db/models/chatModel.ts";
+import Message from "../../../db/models/messageModel.ts";
 import { Response } from "express";
 
 async function getConversationMessages(req: AuthRequest, res: Response): Promise<void> {

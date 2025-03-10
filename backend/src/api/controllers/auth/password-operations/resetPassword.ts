@@ -1,7 +1,7 @@
-import User from '@/db/models/userModel.ts';
+import User from '../../../../db/models/userModel.ts';
 import { Request, Response } from 'express';
 import bcrypt from "bcrypt";
-import { sendResetSuccessEmail } from '@/config/mail/emails.ts';
+import { sendResetSuccessEmail } from '../../../../config/mail/emails.ts';
 
 export const resetPassword = async (req: Request, res: Response): Promise<Response> => {
 	try {

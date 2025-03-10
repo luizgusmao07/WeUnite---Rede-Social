@@ -1,5 +1,5 @@
-import { AuthRequest } from '@/api/middlewares/authenticatedRequest.ts';
-import Post from '@/db/models/postModel.ts';
+import { AuthRequest } from '../../../../api/middlewares/authenticatedRequest.ts';
+import Post from '../../../../db/models/postModel.ts';
 import { Response } from 'express';
 import { Types } from 'mongoose';
 import createNotification from '../../notifications/createNotification.ts';

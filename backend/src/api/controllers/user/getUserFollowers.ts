@@ -1,5 +1,5 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import User from "@/db/models/userModel.ts";
+import { AuthRequest } from "../../../api/middlewares/authenticatedRequest.ts";
+import User from "../../../db/models/userModel.ts";
 import { Response } from 'express';
 
 const getUserFollowers = async (req: AuthRequest, res: Response): Promise<void> => {

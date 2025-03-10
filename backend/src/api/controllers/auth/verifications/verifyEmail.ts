@@ -1,6 +1,6 @@
-import { sendWelcomeEmail } from "@/config/mail/emails.ts";
-import User from "@/db/models/userModel.ts";
-import generateTokenAndSetCookie from "@/utils/generateAndSetCookie.ts";
+import { sendWelcomeEmail } from "../../../../config/mail/emails.ts";
+import User from "../../../../db/models/userModel.ts";
+import generateTokenAndSetCookie from "../../../../utils/generateAndSetCookie.ts";
 import { Request, Response } from "express";
 
 export const verifyEmail = async (req: Request, res: Response): Promise<Response> => {

@@ -1,6 +1,6 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import Oportunity from "@/db/models/oportunityModel.ts";
-import User from "@/db/models/userModel.ts";
+import { AuthRequest } from "../../../api/middlewares/authenticatedRequest.ts";
+import Oportunity from "../../../db/models/oportunityModel.ts";
+import User from "../../../db/models/userModel.ts";
 import { v2 as cloudinary } from "cloudinary"
 import { Response } from 'express';
 

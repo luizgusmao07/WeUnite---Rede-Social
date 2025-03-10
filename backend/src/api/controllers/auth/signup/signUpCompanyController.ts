@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 
-import { sendWelcomeEmailCompany } from "@/config/mail/emails.ts";
+import { sendWelcomeEmailCompany } from "../../../../config/mail/emails.ts";
 import mongoose from "mongoose";
-import User from '@/db/models/userModel.ts';
+import User from '../../../../db/models/userModel.ts';
 import { formatData } from '../../functions/formatData.ts';
 import { validateRequiredFields } from '../../functions/validateRequiredFields.ts'; // Certifique-se de que o caminho está correto
 import ISignUpCompanyRequestBody from './interfaces/ISignUpCompanyRequestBody.ts';

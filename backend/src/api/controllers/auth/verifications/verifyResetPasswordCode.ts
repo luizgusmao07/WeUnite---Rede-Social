@@ -1,4 +1,4 @@
-import User from "@/db/models/userModel.ts";
+import User from "../../../../db/models/userModel.ts";
 import { Request, Response } from "express";
 
 export const verifyResetPasswordCode = async (req: Request, res: Response): Promise<Response> => {

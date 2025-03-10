@@ -1,5 +1,5 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import Post from "@/db/models/postModel.ts";
+import { AuthRequest } from "../../../../api/middlewares/authenticatedRequest.ts";
+import Post from "../../../../db/models/postModel.ts";
 import { Response } from 'express';
 
 const deleteComment = async (req: AuthRequest, res: Response) => {

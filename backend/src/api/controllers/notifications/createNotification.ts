@@ -1,4 +1,4 @@
-import Notification from "@/db/models/notificationModel.ts";
+import Notification from "../../../db/models/notificationModel.ts";
 
 export const createNotification = async (
     user: string,

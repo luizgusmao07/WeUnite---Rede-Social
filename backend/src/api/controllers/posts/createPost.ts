@@ -1,6 +1,6 @@
 import ICreatePostResponse from './interfaces/ICreatePostResponse.ts';
-import Post from '@/db/models/postModel.ts';
-import User from '@/db/models/userModel.ts';
+import Post from '../../../db/models/postModel.ts';
+import User from '../../../db/models/userModel.ts';
 import { v2 as cloudinary } from "cloudinary";
 import { Response } from 'express';
 import { AuthRequest } from '../../middlewares/authenticatedRequest.ts';

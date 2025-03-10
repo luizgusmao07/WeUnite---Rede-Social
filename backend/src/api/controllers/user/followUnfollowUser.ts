@@ -1,5 +1,5 @@
-import { AuthRequest } from "@/api/middlewares/authenticatedRequest.ts";
-import User from "@/db/models/userModel.ts";
+import { AuthRequest } from "../../middlewares/authenticatedRequest.ts";
+import User from "../../../db/models/userModel.ts";
 import createNotification from "../notifications/createNotification.ts";
 import { Response } from "express";
 

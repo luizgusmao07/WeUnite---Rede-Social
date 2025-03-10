@@ -1,6 +1,6 @@
-import { sendVerificationEmail } from "@/config/mail/emails.ts";
-import IUser from "@/db/interfaces/userInterface.ts";
-import User from "@/db/models/userModel.ts";
+import { sendVerificationEmail } from "../../../../config/mail/emails.ts";
+import IUser from "../../../../db/interfaces/userInterface.ts";
+import User from "../../../../db/models/userModel.ts";
 import mongoose from "mongoose";
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";

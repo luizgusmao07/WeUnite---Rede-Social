@@ -1,8 +1,8 @@
-import IUser from "@/db/interfaces/userInterface.ts";
+import IUser from "../../db/interfaces/userInterface.ts";
 import { Document } from "mongoose";
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import User from "@/db/models/userModel.ts";
+import User from "../../db/models/userModel.ts";
 
 // Define the structure of decoded JWT token
 interface DecodedToken {

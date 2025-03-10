@@ -1,4 +1,4 @@
-import { sendVerificationEmailCompany } from "@/config/mail/emails.ts";
+import { sendVerificationEmailCompany } from "../../../../config/mail/emails.ts";
 import checkExistingUser from "../../functions/checkExistingUser.ts";
 import { Request, Response } from 'express';
 import { formatData } from "../../functions/formatData.ts";
